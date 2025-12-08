@@ -155,12 +155,13 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 Se utilizares este template no teu trabalho académico, podes citá-lo:
 
-> Araújo, S. C. (2025). Template LaTeX ISCA-UA (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17850570
+
+> Correia de Araújo, S. (2025). Template LaTeX ISCA-UA (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17850570
 
 Ou em BibTeX:
 ```bibtex
-@software{araujo2025isca,
-  author       = {Araújo, Sofia Correia de},
+@software{correia_de_araujo_2025,
+  author       = {Correia de Araújo, Sofia},
   title        = {Template LaTeX ISCA-UA},
   version      = {v1.0.0},
   year         = {2025},
