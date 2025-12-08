@@ -4,6 +4,7 @@
 [![Overleaf](https://img.shields.io/badge/Overleaf-Ready-green?logo=overleaf)](https://www.overleaf.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![UA](https://img.shields.io/badge/Universidade-Aveiro-red)](https://www.ua.pt/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17850570.svg)](https://doi.org/10.5281/zenodo.17850570)
 
 Template LaTeX **modular** para dissertações de mestrado e relatórios do **Instituto Superior de Contabilidade e Administração da Universidade de Aveiro (ISCA-UA)**.
 
@@ -148,6 +149,28 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
 
+---
+
+## 📖 Como Citar
+
+Se utilizares este template no teu trabalho académico, podes citá-lo:
+
+> Araújo, S. C. (2025). Template LaTeX ISCA-UA (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17850570
+
+Ou em BibTeX:
+```bibtex
+@software{araujo2025isca,
+  author       = {Araújo, Sofia Correia de},
+  title        = {Template LaTeX ISCA-UA},
+  version      = {v1.0.0},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.17850570},
+  url          = {https://doi.org/10.5281/zenodo.17850570}
+}
+```
+
+---
 ## 👥 Créditos
 
 Desenvolvido e disponibilizado por **Sofia Correia de Araújo**, estudante finalista da Licenciatura em Contabilidade no ISCA-UA.
