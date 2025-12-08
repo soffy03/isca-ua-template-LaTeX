@@ -1,0 +1,477 @@
+%% config.sty - Configuração do Template ISCA-UA
+%% Instituto Superior de Contabilidade e Administração - Universidade de Aveiro
+%% Baseado nas normas oficiais da UA (atualizado maio 2025)
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{config/config}[2025/01/01 ISCA-UA Template Config]
+
+%% ============================================================================
+%% PACOTES ESSENCIAIS
+%% ============================================================================
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[portuguese]{babel}
+\RequirePackage{geometry}
+\RequirePackage{setspace}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{tocloft}
+\RequirePackage{hyperref}
+\RequirePackage{parskip}
+\RequirePackage{indentfirst}
+\RequirePackage{caption}
+\RequirePackage{float}
+\RequirePackage{array}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+\RequirePackage{enumitem}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{etoolbox}
+\RequirePackage{tikz}
+\RequirePackage{pdfpages}
+\RequirePackage{subcaption}
+\RequirePackage{multirow}
+
+%% ============================================================================
+%% CORES DO ISCA/UA - Área de Contabilidade
+%% Pantone 301 (Azul) / Pantone 1787 (Vermelho)
+%% ============================================================================
+\definecolor{iscaazul}{RGB}{0, 82, 147}        % Pantone 301
+\definecolor{iscavermelho}{RGB}{245, 63, 91}   % Pantone 1787
+\definecolor{uacinza}{RGB}{100, 100, 100}      % Cinza para texto secundário
+
+% Outras cores por área científica (para referência/personalização)
+\definecolor{uaartes}{RGB}{193, 175, 229}       % Pantone 264 - Artes
+\definecolor{uaciencias}{RGB}{113, 214, 224}    % Pantone 3105 - Ciências
+\definecolor{uaeducacao}{RGB}{255, 110, 0}      % Pantone 1505 - Educação/Psicologia
+\definecolor{uaeconomia}{RGB}{245, 63, 91}      % Pantone 1787 - Economia e Gestão
+\definecolor{uaengenharia}{RGB}{152, 50, 34}    % Pantone 484 - Engenharia
+\definecolor{ualinguas}{RGB}{0, 82, 147}        % Pantone 301 - Línguas/Ciências Sociais
+\definecolor{uasaude}{RGB}{255, 218, 37}        % Pantone 115 - Saúde
+
+%% ============================================================================
+%% CONFIGURAÇÃO DE PÁGINA (Normas UA)
+%% Margens: esquerda 3cm, direita 2.5cm, superior 3cm, inferior 3cm
+%% ============================================================================
+\geometry{
+    a4paper,
+    left=3cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm,
+    headheight=15pt
+}
+
+%% ============================================================================
+%% ESPAÇAMENTO (Normas UA - máximo 1.5 linhas)
+%% ============================================================================
+\onehalfspacing
+
+%% Parágrafos com indentação (sem espaço extra entre parágrafos)
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt plus 1pt}
+
+%% ============================================================================
+%% FONTES (Normas UA - dimensão 10-12pt, tipo livre)
+%% ============================================================================
+\RequirePackage{times}
+
+%% ============================================================================
+%% CABEÇALHOS E RODAPÉS
+%% ============================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+%% ============================================================================
+%% TÍTULOS DE CAPÍTULOS E SECÇÕES
+%% ============================================================================
+\titleformat{\chapter}[display]
+    {\normalfont\LARGE\bfseries\color{iscaazul}}
+    {\chaptertitlename\ \thechapter}
+    {15pt}
+    {\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{30pt}
+
+\titleformat{\section}
+    {\normalfont\Large\bfseries\color{iscaazul}}
+    {\thesection}
+    {1em}
+    {}
+\titlespacing*{\section}{0pt}{20pt}{10pt}
+
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}
+    {\thesubsection}
+    {1em}
+    {}
+\titlespacing*{\subsection}{0pt}{15pt}{8pt}
+
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}
+    {\thesubsubsection}
+    {1em}
+    {}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+%% ============================================================================
+%% ÍNDICE
+%% ============================================================================
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\listfigurename}{Índice de Figuras}
+\renewcommand{\listtablename}{Índice de Tabelas}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+%% ============================================================================
+%% LEGENDAS DE FIGURAS E TABELAS
+%% ============================================================================
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    format=hang,
+    justification=centering
+}
+
+%% ============================================================================
+%% HYPERLINKS
+%% ============================================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=iscaazul,
+    citecolor=iscaazul,
+    urlcolor=iscaazul,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    pdfstartview=FitH
+}
+
+%% ============================================================================
+%% CAMINHO PARA IMAGENS
+%% ============================================================================
+\graphicspath{
+    {config/logos/}
+    {chapter1/images/}
+    {chapter2/images/}
+    {chapter3/images/}
+    {chapter4/images/}
+    {chapter5/images/}
+    {annexes/}
+}
+
+%% ============================================================================
+%% VARIÁVEIS DO DOCUMENTO
+%% ============================================================================
+\newcommand{\@titulo}{}
+\newcommand{\titulo}[1]{\renewcommand{\@titulo}{#1}}
+
+\newcommand{\@tituloingles}{}
+\newcommand{\tituloingles}[1]{\renewcommand{\@tituloingles}{#1}}
+
+\newcommand{\@autor}{}
+\newcommand{\autor}[1]{\renewcommand{\@autor}{#1}}
+
+\newcommand{\@curso}{}
+\newcommand{\curso}[1]{\renewcommand{\@curso}{#1}}
+
+\newcommand{\@departamento}{Instituto Superior de Contabilidade e Administração}
+\newcommand{\departamento}[1]{\renewcommand{\@departamento}{#1}}
+
+\newcommand{\@orientador}{}
+\newcommand{\orientador}[1]{\renewcommand{\@orientador}{#1}}
+
+\newcommand{\@coorientador}{}
+\newcommand{\coorientador}[1]{\renewcommand{\@coorientador}{#1}}
+
+\newcommand{\@ano}{\the\year}
+\newcommand{\ano}[1]{\renewcommand{\@ano}{#1}}
+
+\newcommand{\@grau}{Mestre}
+\newcommand{\grau}[1]{\renewcommand{\@grau}{#1}}
+
+\newcommand{\@palavraschave}{}
+\newcommand{\palavraschave}[1]{\renewcommand{\@palavraschave}{#1}}
+
+\newcommand{\@keywords}{}
+\newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
+
+%% ============================================================================
+%% CAPA (Modelo UA com logos)
+%% ============================================================================
+\newcommand{\fazercapa}{
+    \begin{titlepage}
+        \centering
+        
+        % Barra de cor do curso (Contabilidade: Azul 301 + Vermelho 1787)
+        \begin{tikzpicture}[remember picture, overlay]
+            \fill[iscaazul] (current page.north west) rectangle ([yshift=-1cm]current page.north east);
+            \fill[white] ([yshift=-1cm]current page.north west) rectangle ([yshift=-1.3cm]current page.north east);
+            \fill[iscavermelho] ([yshift=-1.3cm]current page.north west) rectangle ([yshift=-2.3cm]current page.north east);
+        \end{tikzpicture}
+        
+        \vspace{2.5cm}
+        
+        % Logos UA e ISCA lado a lado
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[height=2.5cm]{ua-logo}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[height=2.5cm]{isca-logo}
+        \end{minipage}
+        
+        \vspace{0.8cm}
+        
+        {\large Universidade de Aveiro}
+        
+        \vspace{0.2cm}
+        
+        {\normalsize \@ano}
+        
+        \vspace{1.5cm}
+        
+        {\Large\bfseries \@autor}
+        
+        \vspace{1.5cm}
+        
+        {\LARGE\bfseries \@titulo}
+        
+        \ifx\@tituloingles\empty\else
+            \vspace{0.5cm}
+            {\large\itshape \@tituloingles}
+        \fi
+        
+        \vfill
+        
+    \end{titlepage}
+}
+
+%% ============================================================================
+%% FOLHA DE ROSTO (Página 1)
+%% ============================================================================
+\newcommand{\fazerfolharosto}{
+    \newpage
+    \thispagestyle{empty}
+    \centering
+    
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[iscaazul] (current page.north west) rectangle ([yshift=-1cm]current page.north east);
+        \fill[white] ([yshift=-1cm]current page.north west) rectangle ([yshift=-1.3cm]current page.north east);
+        \fill[iscavermelho] ([yshift=-1.3cm]current page.north west) rectangle ([yshift=-2.3cm]current page.north east);
+    \end{tikzpicture}
+    
+    \vspace{2.5cm}
+    
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[height=2.5cm]{ua-logo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[height=2.5cm]{isca-logo}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    {\large Universidade de Aveiro}
+    
+    \vspace{0.2cm}
+    
+    {\normalsize \@ano}
+    
+    \vspace{1.2cm}
+    
+    {\Large\bfseries \@autor}
+    
+    \vspace{1.2cm}
+    
+    {\LARGE\bfseries \@titulo}
+    
+    \ifx\@tituloingles\empty\else
+        \vspace{0.3cm}
+        {\large\itshape \@tituloingles}
+    \fi
+    
+    \vspace{1.2cm}
+    
+    \begin{flushleft}
+        \hspace{4cm}
+        \begin{minipage}{11cm}
+            Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de \@grau\ em \@curso, realizada sob a orientação científica de \@orientador\ifx\@coorientador\empty\else, e coorientação de \@coorientador\fi.
+        \end{minipage}
+    \end{flushleft}
+    
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% PÁGINA DO JÚRI
+%% ============================================================================
+\newcommand{\jurip}{}
+\newcommand{\juris}{}
+\newcommand{\jurit}{}
+\newcommand{\juripresidente}[1]{\renewcommand{\jurip}{#1}}
+\newcommand{\jurivogal}[1]{\renewcommand{\juris}{#1}}
+\newcommand{\juriorientador}[1]{\renewcommand{\jurit}{#1}}
+
+\newcommand{\fazerpaginajuri}{
+    \newpage
+    \thispagestyle{empty}
+    
+    \vspace*{5cm}
+    
+    \begin{center}
+        {\large\bfseries O júri / The jury}
+    \end{center}
+    
+    \vspace{2cm}
+    
+    \begin{flushleft}
+        \textbf{presidente / president}\\
+        \jurip
+        
+        \vspace{1cm}
+        
+        \textbf{vogais / examiners committee}\\
+        \juris
+        
+        \vspace{1cm}
+        
+        \textbf{orientador / supervisor}\\
+        \jurit
+    \end{flushleft}
+    
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% AGRADECIMENTOS
+%% ============================================================================
+\newenvironment{agradecimentos}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{3cm}
+    \begin{center}
+        {\large\bfseries Agradecimentos}
+    \end{center}
+    \vspace{1cm}
+}{
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% RESUMO E ABSTRACT
+%% ============================================================================
+\newenvironment{resumo}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{2cm}
+    \begin{center}
+        {\large\bfseries Resumo}
+    \end{center}
+    \vspace{1cm}
+}{
+    \vspace{1cm}
+    \noindent\textbf{Palavras-chave:} \@palavraschave
+    \vfill
+    \newpage
+}
+
+\newenvironment{abstracten}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{2cm}
+    \begin{center}
+        {\large\bfseries Abstract}
+    \end{center}
+    \vspace{1cm}
+}{
+    \vspace{1cm}
+    \noindent\textbf{Keywords:} \@keywords
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% DECLARAÇÃO DE IA (Norma UA 2024)
+%% ============================================================================
+\newcommand{\@declaracaoia}{}
+\newcommand{\declaracaoia}[1]{\renewcommand{\@declaracaoia}{#1}}
+
+\newcommand{\fazerdeclaracaoia}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{3cm}
+    \begin{center}
+        {\large\bfseries Declaração sobre o uso de Inteligência Artificial}
+    \end{center}
+    \vspace{1cm}
+    
+    \noindent\@declaracaoia
+    
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% DEDICATÓRIA E EPÍGRAFE
+%% ============================================================================
+\newenvironment{dedicatoria}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{10cm}
+    \begin{flushright}
+        \itshape
+}{
+    \end{flushright}
+    \vfill
+    \newpage
+}
+
+\newenvironment{epigrafe}{
+    \newpage
+    \thispagestyle{empty}
+    \vspace*{10cm}
+    \begin{flushright}
+        \itshape
+}{
+    \end{flushright}
+    \vfill
+    \newpage
+}
+
+%% ============================================================================
+%% COMANDOS AUXILIARES
+%% ============================================================================
+\newcommand{\addbibliografia}{
+    \renewcommand{\bibname}{Referências Bibliográficas}
+    \addcontentsline{toc}{chapter}{Referências Bibliográficas}
+}
+
+\newcommand{\anexos}{
+    \appendix
+    \renewcommand{\chaptername}{Anexo}
+}
+
+\endinput

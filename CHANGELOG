@@ -1,0 +1,36 @@
+# CHANGELOG - Template ISCA-UA
+
+## Versão 1.0.0 (Dezembro 2025)
+
+### Criação inicial
+- Template criado com base nas normas oficiais da UA (maio 2025)
+- Estrutura modular para facilitar edição
+- Cores do ISCA/Contabilidade: Pantone 301 (Azul) + Pantone 1787 (Vermelho)
+
+### Conformidade com normas UA
+- Margens: esquerda 3cm, direita 2.5cm, superior 3cm, inferior 3cm
+- Espaçamento: 1.5 linhas
+- Fonte: 12pt (Times New Roman)
+- Indentação de parágrafos: 1.25cm
+
+### Estrutura de ficheiros
+- Organização modular por capítulos
+- Separação de conteúdo, imagens e tabelas
+- Ficheiros de configuração centralizados
+
+### Funcionalidades
+- Capa e folha de rosto automáticas
+- Página do júri
+- Resumo e Abstract
+- Declaração de IA (obrigatório desde 2024)
+- Lista de acrónimos e glossário
+- Anexos
+
+---
+
+## Como atualizar
+
+Se surgirem novas normas da UA:
+1. Verifique em: https://www.ua.pt/pt/sga/page/12810
+2. Atualize o ficheiro `config/config.sty`
+3. Documente as alterações neste CHANGELOG

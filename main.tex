@@ -1,0 +1,125 @@
+%% main.tex - Template ISCA-UA (Estrutura Modular)
+%% Instituto Superior de Contabilidade e Administração - Universidade de Aveiro
+%% 
+%% Normas oficiais: https://www.ua.pt/pt/sga/page/12810
+%% Cores ISCA/Contabilidade: Pantone 301 (Azul) + Pantone 1787 (Vermelho)
+
+\documentclass[12pt,a4paper,twoside,openright]{book}
+
+%% ============================================================================
+%% CONFIGURAÇÃO DO TEMPLATE
+%% ============================================================================
+\usepackage{config/config}
+
+%% ============================================================================
+%% BIBLIOGRAFIA (escolha o estilo adequado à sua área)
+%% ============================================================================
+\usepackage[style=apa,backend=biber]{biblatex}
+% Alternativas:
+% \usepackage[style=ieee,backend=biber]{biblatex}
+% \usepackage[style=numeric,backend=biber]{biblatex}
+
+\addbibresource{biblio.bib}
+
+%% ============================================================================
+%% DADOS DO DOCUMENTO (EDITAR AQUI)
+%% ============================================================================
+\titulo{Título da Dissertação em Português}
+\tituloingles{Dissertation Title in English}
+
+\autor{Nome Completo do Autor}
+
+\curso{Contabilidade}
+
+\departamento{Instituto Superior de Contabilidade e Administração}
+
+\orientador{Prof. Doutor Nome do Orientador, Professor Associado do ISCA-UA}
+\coorientador{Prof. Doutor Nome do Coorientador, Professor Auxiliar do ISCA-UA}
+
+\ano{2025}
+
+\grau{Mestre}
+
+\palavraschave{palavra1, palavra2, palavra3, palavra4, palavra5}
+\keywords{keyword1, keyword2, keyword3, keyword4, keyword5}
+
+\declaracaoia{%
+Na elaboração desta dissertação foi utilizada/não foi utilizada Inteligência Artificial generativa. 
+[Se foi utilizada:] As ferramentas utilizadas foram [nome das ferramentas] para [finalidade].
+O autor assume total responsabilidade pelo conteúdo final do trabalho.
+}
+
+%% ============================================================================
+%% MEMBROS DO JÚRI (preencher após nomeação)
+%% ============================================================================
+\juripresidente{Prof. Doutor Nome Completo\\
+\small Professor Catedrático da Universidade de Aveiro}
+
+\jurivogal{Prof. Doutor Nome Completo\\
+\small Professor Associado da [Instituição]}
+
+\juriorientador{Prof. Doutor Nome Completo\\
+\small Professor [Categoria] do ISCA-UA}
+
+%% ============================================================================
+%% INÍCIO DO DOCUMENTO
+%% ============================================================================
+\begin{document}
+
+%% ----------------------------------------------------------------------------
+%% ELEMENTOS PRÉ-TEXTUAIS (numeração romana)
+%% ----------------------------------------------------------------------------
+\frontmatter
+
+\fazercapa
+\fazerfolharosto
+\fazerpaginajuri
+
+% Agradecimentos, Resumo, Abstract
+\input{resumo.tex}
+
+% Declaração IA
+\fazerdeclaracaoia
+
+% Índices (aparecem antes dos acrónimos)
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Acrónimos e Glossário
+\input{acronimos.tex}
+\input{glossario.tex}
+
+%% ----------------------------------------------------------------------------
+%% CORPO DO DOCUMENTO (numeração árabe, começa em 1)
+%% ----------------------------------------------------------------------------
+\mainmatter
+
+% Capítulo 1 - Introdução
+\input{chapter1/include.tex}
+
+% Capítulo 2 - Revisão da Literatura
+\input{chapter2/include.tex}
+
+% Capítulo 3 - Metodologia
+\input{chapter3/include.tex}
+
+% Capítulo 4 - Resultados
+\input{chapter4/include.tex}
+
+% Capítulo 5 - Conclusões
+\input{chapter5/include.tex}
+
+%% ----------------------------------------------------------------------------
+%% REFERÊNCIAS BIBLIOGRÁFICAS
+%% ----------------------------------------------------------------------------
+\addbibliografia
+\printbibliography
+
+%% ----------------------------------------------------------------------------
+%% ANEXOS
+%% ----------------------------------------------------------------------------
+\anexos
+\input{annexes/include.tex}
+
+\end{document}

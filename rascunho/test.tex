@@ -1,0 +1,48 @@
+%% test.tex - Ficheiro de Rascunho
+%% Use este ficheiro para testar formatação, equações, tabelas, etc.
+%% NÃO é compilado com o main.tex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\begin{document}
+
+\section*{Área de Testes}
+
+Use este ficheiro para testar elementos antes de os incluir no documento principal.
+
+\subsection*{Teste de Equação}
+
+\begin{equation}
+    ROE = \frac{\text{Resultado Líquido}}{\text{Capital Próprio}} \times 100
+\end{equation}
+
+\subsection*{Teste de Tabela}
+
+\begin{table}[h]
+    \centering
+    \caption{Exemplo de tabela}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Item} & \textbf{Valor A} & \textbf{Valor B} \\
+        \midrule
+        Item 1 & 100 & 200 \\
+        Item 2 & 150 & 250 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection*{Teste de Lista}
+
+\begin{itemize}
+    \item Primeiro item
+    \item Segundo item
+    \item Terceiro item
+\end{itemize}
+
+\end{document}
