@@ -3,7 +3,7 @@
 [![LaTeX](https://img.shields.io/badge/LaTeX-Template-blue?logo=latex)](https://www.latex-project.org/)
 [![Overleaf](https://img.shields.io/badge/Overleaf-Ready-green?logo=overleaf)](https://www.overleaf.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![UA](https://img.shields.io/badge/Universidade-Aveiro-red)]([https://www.ua.pt/](https://www.ua.pt/pt/isca))
+[![UA](https://img.shields.io/badge/Universidade-Aveiro-red)]((https://www.ua.pt/pt/isca))
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17850570.svg)](https://doi.org/10.5281/zenodo.17850570)
 
 Template LaTeX **modular** para dissertações de mestrado e relatórios do **Instituto Superior de Contabilidade e Administração da Universidade de Aveiro (ISCA-UA)**.
